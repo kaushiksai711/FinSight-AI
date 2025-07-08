@@ -1,48 +1,15 @@
-VaultGPT 🔐🤖
+## FinSight AI 🔐🤖
 The World's First Zero-Knowledge Multi-Agent Financial AI
 
 
 "Your AI Financial Team That Never Sees Your Data"
 
-VaultGPT is a groundbreaking multi-agent AI system built for the 30-hour Agentic Day Google Hackathon, delivering personalized financial guidance with absolute privacy through user-controlled encryption and zero-knowledge architecture. Powered by the Google Agent Development Kit (ADK), it integrates seamlessly with Fi Money for real-time financial data analysis.
+FinSight AI is a groundbreaking multi-agent AI system built for the 30-hour Agentic Day Google Hackathon, delivering personalized financial guidance with absolute privacy through user-controlled encryption and zero-knowledge architecture. Powered by the Google Agent Development Kit (ADK), it integrates seamlessly with Fi Money for real-time financial data analysis.
 
 🎯 The Breakthrough
 Problem: Traditional financial AI compromises privacy by accessing sensitive data.
 Solution: VaultGPT leverages Google ADK to orchestrate specialized AI agents that analyze encrypted financial data using homomorphic encryption, ensuring zero-knowledge processing.
 Result: Personalized financial advice, investment recommendations, and crisis planning without exposing your data.
-
-🏗️ Architecture Overview
-┌─────────────────────────────────────────────────────────────┐
-│                 🎭 ORCHESTRATION AGENT                      │
-│         (Google ADK LlmAgent - Query Router)               │
-└─────────────┬───────────────────────────────────┬──────────┘
-              │(progression)                      │
-    ┌─────────▼─────────┐               ┌────────▼─────────┐
-    │  🔐 SECURE       │               │  💰 FI MONEY     │
-    │    STORAGE      │               │     AGENT         │
-    │ (AES-256-GCM)   │               │ (MCP Integration) │
-    └─────────┬─────────┘               └────────┬─────────┘
-              │                                   │
-    ┌─────────▼─────────┐               ┌────────▼─────────┐
-    │  📊 ANALYTICS     │               │  💰 FINANCIAL    │
-    │     AGENT         │               │     ADVISOR      │
-    │(Data Predictions) │               │ (Prompt-Tuned)   │
-    └─────────┬─────────┘               └────────┬─────────┘
-              │                                   │
-              └───────────────┬───────────────────┘
-                             │
-                    ┌────────▼─────────┐
-                    │  🚨 EMERGENCY    │
-                    │     AGENT        │
-                    │ (Crisis Handler) │
-                    └────────┬─────────┘
-                             │
-                    ┌────────▼─────────┐
-                    │  📈 INVESTMENT   │
-                    │     AGENT        │
-                    │ (Real-time +     │
-                    │  Google Search)  │
-                    └──────────────────┘
 
 
 🤖 The AI Agent Team
@@ -274,52 +241,6 @@ ENCRYPTION_SECRET=your_encryption_secret
 JWT_SECRET=your_jwt_secret
 
 
-🏗️ Project Structure
-The project is organized to ensure compatibility with the Google Agent Development Kit (ADK) and the adk web command. Each agent folder contains agent.py, tools.py, and __init__.py, with subagents structured similarly.
-vaultgpt/
-├── src/
-│   ├── agents/                 # ADK agent implementations
-│   │   ├── orchestration/      # Orchestration agent
-│   │   │   ├── __init__.py
-│   │   │   ├── agent.py        # Defines agent configuration
-│   │   │   └── tools.py        # Custom tools for the agent
-│   │   ├── encryption/         # Encryption agent
-│   │   │   ├── __init__.py
-│   │   │   ├── agent.py
-│   │   │   └── tools.py
-│   │   ├── lifestyle/          # Lifestyle agent
-│   │   │   ├── __init__.py
-│   │   │   ├── agent.py
-│   │   │   └── tools.py
-│   │   ├── emergency/          # Emergency agent
-│   │   │   ├── __init__.py
-│   │   │   ├── agent.py
-│   │   │   └── tools.py
-│   │   ├── analytics/          # N Analytics agent
-│   │   │   ├── __init__.py
-│   │   │   ├── agent.py
-│   │   │   └── tools.py
-│   │   └── investment/         # Investment agent
-│   │       ├── __init__.py
-│   │       ├── agent.py
-│   │       └── tools.py
-│   ├── components/             # React Native components
-│   │   ├── BiometricVault.js   # Biometric authentication
-│   │   ├── AgentInterface.js   # Multi-agent UI
-│   │   └── EncryptedChart.js   # Privacy-preserving visualizations
-│   ├── services/               # External integrations
-│   │   ├── fiMCP.js           # Fi Money integration
-│   │   ├── encryption.js       # Custom encryption logic
-│   │   └── marketData.js       # Real-time market data
-│   └── utils/                  # Helper functions
-├── backend/
-│   ├── routes/                 # Node.js API endpoints
-│   ├── middleware/             # Authentication & security
-│   └── adk/                    # ADK service integration
-├── docs/                       # Documentation
-└── demo/                       # Demo scripts and data
-
-
 🎯 Agent Development Guide
 Creating a New Agent
 Each agent is defined in its own folder with agent.py, tools.py, and __init__.py. Here's an example for the Investment Agent:
@@ -437,14 +358,8 @@ Submit pull request
 Licensed under the MIT License - see the LICENSE file.
 
 🎯 The Vision
-VaultGPT redefines financial AI with Google ADK, delivering expert guidance while ensuring absolute privacy. Built for the Agentic Day Google Hackathon, it’s the future of fintech.
+FinSight AI redefines financial AI with Google ADK, delivering expert guidance while ensuring absolute privacy. Built for the Agentic Day Google Hackathon, it’s the future of fintech.
 
-🔗 Links
-
-Live Demo: https://vaultgpt-demo.vercel.app
-Documentation: https://docs.vaultgpt.ai
-API Reference: https://api.vaultgpt.ai/docs
-Team: https://github.com/vaultgpt-team
 
 
 🎊 Acknowledgments
@@ -455,4 +370,3 @@ Google Cloud: For scalable infrastructure
 React Native Community: For cross-platform framework
 Hackathon Organizers: For the innovation platform
 
-Built with ❤️ by the VaultGPT Team
