@@ -5,6 +5,10 @@
 
 FinSight AI is a multi-agentic AI system for the 30-hour Agentic Day Google Hackathon, delivering personalized financial guidance with robust security through Google ADK's sandboxing and zero-persistence architecture. It integrates seamlessly with Fi Money for real-time financial data analysis while maintaining the highest security standards.
 
+## Demo Video (Basic prototype)
+
+https://github.com/user-attachments/assets/08ed1cad-1a17-485d-aefe-65a05f4c30ed
+
 ### The Breakthrough
 **Problem**: Traditional financial AI systems often expose sensitive data to security risks during processing.
 
@@ -290,9 +294,6 @@ orchestration_agent = LlmAgent(
 )
 ```
 
-## Demo Video
-
-https://github.com/user-attachments/assets/08ed1cad-1a17-485d-aefe-65a05f4c30ed
 
 🎊 Acknowledgments
 
