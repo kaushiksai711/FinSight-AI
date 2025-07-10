@@ -1,30 +1,30 @@
 # FinSight AI 🔐🤖
-### The World's First Zero-Knowledge Multi-Agentic Financial AI
+### Secure Multi-Agentic Financial AI with ADK Sandboxing
 
+"Your AI Financial Team with Enterprise-Grade Security"
 
-"Your AI Financial Team That Never Sees Your Data"
-
-FinSight AI is an multi-agentic AI system for the 30-hour Agentic Day Google Hackathon, delivering personalized financial guidance with absolute privacy through user-controlled encryption and zero-knowledge architecture. Powered by the Google Agent Development Kit (ADK), it integrates seamlessly with Fi Money for real-time financial data analysis.
+FinSight AI is a multi-agentic AI system for the 30-hour Agentic Day Google Hackathon, delivering personalized financial guidance with robust security through Google ADK's sandboxing and zero-persistence architecture. It integrates seamlessly with Fi Money for real-time financial data analysis while maintaining the highest security standards.
 
 ### The Breakthrough
-**Problem** : Traditional financial AI compromises privacy by accessing sensitive data.
-Solution: VaultGPT leverages Google ADK to orchestrate specialized AI agents that analyze encrypted financial data using homomorphic encryption, ensuring zero-knowledge processing.
+**Problem**: Traditional financial AI systems often expose sensitive data to security risks during processing.
 
-**Result**: Personalized financial advice, investment recommendations, and crisis planning without exposing your data.
+**Solution**: FinSight leverages Google ADK's secure sandboxing to isolate and protect financial data processing, with a zero-persistence model that ensures no sensitive data remains after processing.
+
+**Result**: Enterprise-grade security with personalized financial advice, investment recommendations, and crisis planning, all processed in a secure, isolated environment.
 
 
 ## The AI Agent Team
 🎭 **Orchestration Agent**
 
 Role: Master coordinator using Google ADK LlmAgent
-Capability: Routes queries to specialized agents based on intent
-Example: "I want to invest but I'm worried about risks" → Routes to Investment + Emergency agents
+Capability: Routes queries to specialized agents based on intent with built-in safety checks
+Example: "I want to invest but I'm worried about risks" → Routes to Investment + Emergency agents with appropriate guardrails
 
-🔐 **Secure Storage Layer**
+🔐 **ADK Security Layer**
 
-Role: Data encryption at rest with AES-256-GCM
-Capability: Transparent encryption/decryption for all stored data
-Example: Automatically encrypts all sensitive data before storage
+Role: Enforces security policies and manages sandboxed execution
+Capability: Implements input/output validation, content filtering, and secure data handling
+Example: Validates all agent operations and enforces data access controls
 
 💰 **Financial Advisor Agent**
 
@@ -57,21 +57,37 @@ Capability: Integrates Google Search API for live market data
 Example: "SBI Small Cap fund dropped 3% today - good entry point"
 
 
+## Security Approach
+
+### 🛡️ Multi-Layered Security Architecture
+
+- **Device Access**: Biometric + Passcode
+- **Data Encryption**: Web Crypto API
+- **Prompt Safety**: ADK Built-in protections
+- **Content Filtering**: ADK Built-in content moderation
+- **Data Persistence**: Zero Persistence + ADK Sandboxing
+- **Session Security**: ADK Session Management with TTL
+- **Identity Management**: ADK Auth + OAuth integration
+- **Code Execution**: ADK Sandboxed Environment
+- **Network Security**: ADK VPC-SC perimeters
+- **UI Safety**: ADK Content Escaping and sanitization
+
 ## Key Features
-### 🔒 Zero-Knowledge Privacy
+### 🔒 ADK-Powered Security
 
-Biometric Vault: Face ID/Fingerprint-protected data
-Custom Encryption: User-controlled passcode encryption
-Homomorphic Analysis: ADK agents process encrypted data
-Selective Access: Different passcodes for different data types
+- **Sandboxed Execution**: Each agent runs in isolated environments using ADK's sandboxing
+- **Zero-Persistence Model**: No sensitive data remains after processing
+- **Input/Output Guardrails**: Built-in content filtering and validation
+- **Secure Session Management**: Automatic cleanup after TTL expiry
+- **VPC-SC Perimeters**: Network-level isolation for data protection
 
-### 🔐 Secure Storage Implementation
+### 🔐 Secure Processing Architecture
 
-- **AES-256-GCM Encryption**: Military-grade encryption for all stored data
-- **Zero-Knowledge Architecture**: Data encrypted before leaving the client
-- **Secure Key Management**: Keys derived from user credentials via PBKDF2
-- **Data Integrity**: Authentication tags prevent tampering
-- **Performance Optimized**: Efficient encryption for high-frequency operations
+- **ADK Sandboxing**: Isolated execution environments for all agents
+- **Temporary Data Handling**: In-memory processing only during active sessions
+- **Secure Data Flow**: End-to-end encryption for all communications
+- **Automatic Cleanup**: Complete data wipe after session expiry
+- **Compliance Ready**: Built to meet enterprise security standards
 
 ### 🧠 Multi-Agent Intelligence
 
@@ -98,8 +114,11 @@ The Fi Money Agent provides seamless integration with Fi Money's MCP platform, o
 ### 🎯 Personalized Guidance
 
 Financial Personality: AI-driven behavioral analysis
+
 Lifestyle Coaching: Tailored advice for life stages
+
 Crisis Management: Emergency-specific guidance
+
 Predictive Insights: Future projections using ADK analytics
 
 
@@ -136,20 +155,29 @@ Google Search API: Real-time market data
 
 ### Security
 
-Web Crypto API: Client-side encryption
+- **ADK Sandboxing**: Isolated execution environments with strict resource constraints
 
-Zero-Knowledge Proofs: Privacy-preserving authentication
+- **Zero-Persistence Model**: No sensitive data retention after session expiry
 
-Biometric Security: Hardware-backed authentication
+- **Content Safety**: Built-in content filtering and moderation
 
-ADK Security: Secure agent communication
+- **Network Security**: VPC-SC perimeters for data isolation
+
+- **Session Management**: Automatic cleanup with configurable TTL
+
+- **Input Validation**: Protection against injection and prompt attacks
+
+- **Compliance**: Built to meet enterprise security standards
 
 
 ### Cloud Infrastructure
 
 Google Cloud Platform: Scalable infrastructure
+
 Vertex AI: ADK deployment
+
 Firebase: Real-time database
+
 Cloud Storage: Encrypted data persistence
 
 
@@ -242,6 +270,7 @@ def get_stock_price(ticker: str) -> float:
     return data['price']
 ```
 Orchestration Integration
+
 The Orchestration Agent routes queries to the appropriate subagents. Here's how it's structured:
 
 orchestration/agent.py
@@ -261,34 +290,6 @@ orchestration_agent = LlmAgent(
 )
 ```
 
-
-🔐 Security Implementation
-Custom Encryption Logic
-```javascript 
-// src/services/encryption.js
-class EncryptionAgent {
-  async encryptWithPasscode(data, passcode) {
-    const customKey = await this.generateCustomKey(passcode);
-    const encryptedData = await crypto.subtle.encrypt(
-      { name: "AES-GCM", iv: crypto.getRandomValues(new Uint8Array(12)) },
-      customKey,
-      new TextEncoder().encode(data)
-    );
-    return encryptedData;
-  }
-
-  async generateCustomKey(passcode) {
-    return crypto.subtle.deriveKey(
-      { name: "PBKDF2", salt: new Uint8Array(16), iterations: 100000, hash: "SHA-256" },
-      await crypto.subtle.importKey("raw", new TextEncoder().encode(passcode), "PBKDF2", false, ["deriveKey"]),
-      { name: "AES-GCM", length: 256 },
-      false,
-      ["encrypt", "decrypt"]
-    );
-  }
-}
-```
-
 ## Demo Video
 
 https://github.com/user-attachments/assets/08ed1cad-1a17-485d-aefe-65a05f4c30ed
@@ -296,6 +297,9 @@ https://github.com/user-attachments/assets/08ed1cad-1a17-485d-aefe-65a05f4c30ed
 🎊 Acknowledgments
 
 Google ADK: For multi-agent orchestration
+
 Fi Money: For MCP integration
+
 Google Cloud: For scalable infrastructure
+
 React Native Community: For cross-platform framework
